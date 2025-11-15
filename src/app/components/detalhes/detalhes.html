@@ -1,0 +1,32 @@
+<div class="container" *ngIf="conteudo">
+    <a routerLink="/" class="voltar">← Voltar</a>
+  
+    <div class="banner">
+      <img [src]="conteudo.banner" [alt]="conteudo.title">
+    </div>
+  
+    <div class="info">
+      <h1>{{ conteudo.title }}</h1>
+      
+      <div class="meta">
+        <span>{{ conteudo.type === 'movie' ? 'Filme' : 'Série' }}</span>
+        <span>{{ conteudo.releaseYear }}</span>
+        <span>{{ conteudo.duration }} min</span>
+        <span>Classificação: {{ conteudo.rating }}</span>
+      </div>
+  
+      <p class="descricao">{{ conteudo.description }}</p>
+      
+      <p class="sinopse">{{ conteudo.synopsis }}</p>
+  
+      <div class="detalhes">
+        <p><strong>Diretor:</strong> {{ conteudo.director }}</p>
+        <p><strong>Elenco:</strong> {{ conteudo.cast.join(', ') }}</p>
+        <p><strong>IMDb:</strong> {{ conteudo.imdbRating }}/10</p>
+        <p><strong>Visualizações:</strong> {{ conteudo.views }}</p>
+        <p><strong>Curtidas:</strong> {{ conteudo.likes }}</p>
+      </div>
+  
+      <a [routerLink]="['/avaliacoes', conteudo.id]" class="btn-avaliacoes">Ver Avaliações</a>
+    </div>
+  </div>

@@ -1,0 +1,116 @@
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .voltar {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  
+  .form-avaliacao {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    
+    form {
+      .campo {
+        margin-bottom: 15px;
+        
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        
+        input, select, textarea {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+        }
+      }
+      
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+  
+  .lista-avaliacoes {
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+  
+  .avaliacao-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
+    .autor {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      
+      strong {
+        font-size: 16px;
+      }
+    }
+    
+    .estrelas {
+      color: #ffc107;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+  }

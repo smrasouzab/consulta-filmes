@@ -1,0 +1,53 @@
+<div class="container">
+  <a [routerLink]="['/detalhes', contentId]" class="voltar">← Voltar</a>
+
+  <h1>Avaliações</h1>
+
+  <div class="form-avaliacao">
+    <h2>Adicionar Avaliação</h2>
+    <form (ngSubmit)="enviarAvaliacao()">
+      <div class="campo">
+        <label>Seu nome:</label>
+        <input type="text" [(ngModel)]="novaAvaliacao.authorName" name="authorName" required>
+      </div>
+
+      <div class="campo">
+        <label>Nota (1-5):</label>
+        <select [(ngModel)]="novaAvaliacao.rating" name="rating">
+          <option [value]="1">1 estrela</option>
+          <option [value]="2">2 estrelas</option>
+          <option [value]="3">3 estrelas</option>
+          <option [value]="4">4 estrelas</option>
+          <option [value]="5">5 estrelas</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label>Título:</label>
+        <input type="text" [(ngModel)]="novaAvaliacao.title" name="title" required>
+      </div>
+
+      <div class="campo">
+        <label>Comentário:</label>
+        <textarea [(ngModel)]="novaAvaliacao.comment" name="comment" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">Enviar Avaliação</button>
+    </form>
+  </div>
+
+  <div class="lista-avaliacoes">
+    <h2>Todas as Avaliações</h2>
+    <div *ngFor="let av of avaliacoes" class="avaliacao-card">
+      <div class="autor">
+        <img [src]="av.authorAvatar" [alt]="av.authorName">
+        <strong>{{ av.authorName }}</strong>
+      </div>
+      <div class="estrelas">
+        <span *ngFor="let star of getStars(av.rating)">{{ star }}</span>
+      </div>
+      <h3>{{ av.title }}</h3>
+      <p>{{ av.comment }}</p>
+    </div>
+  </div>
+</div>

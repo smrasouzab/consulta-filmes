@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Filmes e Séries</h1>
+    
+    <div class="categorias">
+      <h2>Categorias</h2>
+      <div class="categoria-lista">
+        <a *ngFor="let cat of categorias" [routerLink]="['/categoria', cat.slug]" class="categoria-item">
+          {{ cat.name }}
+        </a>
+      </div>
+    </div>
+  
+    <div class="conteudos">
+      <div *ngFor="let conteudo of conteudos" class="conteudo-card">
+        <img [src]="conteudo.thumbnail" [alt]="conteudo.title">
+        <h3>{{ conteudo.title }}</h3>
+        <p>{{ conteudo.type === 'movie' ? 'Filme' : 'Série' }} - {{ conteudo.releaseYear }}</p>
+        <a [routerLink]="['/detalhes', conteudo.id]">Ver detalhes</a>
+      </div>
+    </div>
+  </div>
